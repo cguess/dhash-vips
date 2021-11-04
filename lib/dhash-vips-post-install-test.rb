@@ -7,7 +7,7 @@ p as = [a.to_s(16).rjust(64,?0)].pack("H*").unpack("N*")
 p bs = [b.to_s(16).rjust(64,?0)].pack("H*").unpack("N*")
 puts as.zip(bs)[0,4].map{ |i,j| (i | j).to_s(2).rjust(32, ?0) }.zip \
      as.zip(bs)[4,4].map{ |i,j| (i ^ j).to_s(2).rjust(32, ?0) }
-p DHashVips::IDHash.distance3_c a, b
+p DHashVips::IDHash.distance3 a, b
 p f[a, b]
 fail unless 17 == f[a, b]
 
